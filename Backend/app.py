@@ -3,8 +3,11 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
+from PIL import Image
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = tf.keras.models.load_model('cancer_classifier_model.h5')
 
 def model_predict(img_path, model):
