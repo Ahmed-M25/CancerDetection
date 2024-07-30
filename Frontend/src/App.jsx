@@ -17,12 +17,18 @@ function App() {
     try {
       const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          'Content-Type': 'multipart/form-data',
+        },
       });
+
+      if (response.data.error) {
+        throw new Error(response.data.error);
+      }
+  
       setPrediction(response.data.result);
+     
     } catch (error) {
-      console.error('Error uploading the file:', error);
+      console.error('Error uploading the file:', error.message);
       setPrediction('Error uploading the file.');
     }
   };
