@@ -31,7 +31,7 @@ function Search() {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1>Breast Cancer Q&A</h1>
+        <h2>Breast Cancer Q&A</h2>
         <form onSubmit={handleSubmit} style={styles.form}>
           <input
             type="text"
@@ -53,8 +53,7 @@ function Search() {
 
 const styles = {
   container: {
-    maxWidth: '800px',
-    margin: '0 auto',
+    width: '100%',
     padding: '20px',
   },
   header: {
@@ -68,7 +67,6 @@ const styles = {
   },
   input: {
     width: '100%',
-    maxWidth: '500px',
     padding: '10px',
     marginBottom: '15px',
     border: '1px solid #ced4da',
